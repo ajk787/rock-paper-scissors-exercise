@@ -2,9 +2,25 @@
 
 import random
 
+import os 
 
-print("Welcome USER_NAME to Rock, Paper, Scissors, Shoot!")
+import dotenv
 
+
+
+dotenv.load_dotenv()
+
+
+PLAYER_NAME = os.getenv("PLAYER_NAME")
+#print (PLAYER_NAME)
+
+
+
+print ("-------------------")
+#print("Welcome", PLAYER_NAME, "to Rock, Paper, Scissors, Shoot!")
+print("Welcome "+ PLAYER_NAME + " to Rock, Paper, Scissors, Shoot!")
+
+print ("-------------------")
 user_choice = input("Please choose either 'rock', 'paper', or 'scissors':")
 
 #print(user_choice)
@@ -25,6 +41,7 @@ else:
 valid_options = ["rock", "paper", "scissors"]
 computer_choice = random.choice(valid_options)
 print("COMPUTER CHOICE: ", computer_choice)
+print ("-------------------")
 
 #condition checks for winner
 if (user_choice == computer_choice):
@@ -48,7 +65,7 @@ elif ((user_choice == "scissors") and computer_choice == "rock"):
 elif ((user_choice == "scissors") and computer_choice == "paper"):
    print ("Scissors beats paper, great you win!")     
     
-
+print ("-------------------")
 print("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN.")
 
 exit ()
